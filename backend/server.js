@@ -7,10 +7,9 @@ const port = 5000;
 
 app.use(cors());
 app.use(express.json());
-//mongodb://admin:mi1234@localhost:27017,localhost:27018,localhost:27019/admin?replicaSet=rsmongo
 
 // Connexion à MongoDB avec Mongoose
-mongoose.connect('mongodb://127.0.0.1:27017/DBLP', {
+mongoose.connect('mongodb://127.0.0.1:27017,127.0.0.1:27017:27018,127.0.0.1:27017:27019/DBLP?replicaSet=myReplicaSet', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
